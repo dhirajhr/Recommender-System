@@ -1,7 +1,9 @@
 # Table of Contents
-1. [Dependencies](README.md#dependencies)
-1. [Data Structure Used](README.md#datastructure)
-1. [Approach](README.md#approach)
+1. [Overview](README.md#overview)
+2. [Dataset](README.md#dataset)
+3. [Performance](README.md#performance)
+4. [Output](README.md#output)
+5. [Execution](README.md#execution)
 
 
 # Overview
@@ -10,28 +12,39 @@
 without using a library. 
 2. The dataset used is the [Yelp challenge dataset](https://www.yelp.com/dataset/challenge).
 ![alt text](https://cdn-images-1.medium.com/max/1600/1*SoQdGU3Xefd0bXbqkkI06w.gif "Types of Recommender Systems")
+![alt text](https://cdn-images-1.medium.com/max/1200/1*x8gTiprhLs7zflmEn1UjAQ.png "Collaborative Filtering!")
+
+# Dataset 
+
+* I extracted the subset of the whole dataset contains 452353 reviews between 30,000 user and 30,000 business and split them to train data (90%) and test data (10%). 
+* There are two files *train review.csv* and *test review.csv*, each file contains three conlumns: *user id, business id, and
+stars*. 
+* And we will use these two files to finish and test our recommendation system.
+
+# Performance
+
+* I computed the RMSE (Root Mean Squared Error).
+* Baseline for Model-Based CF Recommendation System: RMSE = 1.08 and for Item-based: RMSE = 1.11
+* I tried to sample the data and even selected only ten most similar users (nearest neighbors) and thus, improved Item-based CF System to RMSE = 1.06
+
+# Output
+
+* user_1, business_2, prediction_12
+* user_1, business_3, prediction_13
+* . . .
+* user_n, business_k, prediction_nk
 
 
-# Dependencies
+# Execution
 
-1. The source code is written in Java 8 and is called Main.java and resides the src folder.
-2. src also contain Prescriber.java which is a POJO class that converts each csv line into an object.
-3. The compilation instructions are specified in the run.sh file.
-4. The following imports are required: import java.io.*;import java.nio.file.*; import java.util.*; import java.util.function.Function; import java.util.stream.Collectors;
+* *JAR Folder* contains a jar file to execute both CF Alforithms.
+* Spark-submit --class ModelBasedCF Recommender_System.jar <rating file path><testing file path>
+* Spark-submit --class ItemBasedCF Recommender_System.jar <rating file path><testing file path>
+    
+# USEFUL LINKS
 
-# Data Structure Used
-* The idea behind my solution is to use Functional Programming. I have used Java Streams to process the data.
-* Streams seem to ideal choice while processing millions of records!
-![alt text](https://www.logicbig.com/tutorials/core-java-tutorial/java-util-stream/images/java-streams.png "Java Streams")
-
-
-# Approach
-
-* To start with, entire data was read as stream and each line of input was converted into an object.
-* The input stream was mapped to (Drug_Name,Cost) and aggregation was performed to get total cost for each drug.
-* Also, the stream was mapped to (Drug_Name,First_Name,Last_Name) and all three entities were combined as key.
-* Finally, we had two maps: (Drug_Name, Cost) and (Drug_Name, Unique_Count). The results were written using PrintWriter. 
-
+* [Recommendation-AS-A-Service](https://cloud.google.com/solutions/recommendations-using-machine-learning-on-compute-engine)
+* [Scaling Recommendation Engines from thousands to million users](https://www.retentionscience.com/blog/scalingrecommendations/)
 
 ## Repo directory structure
 
@@ -39,12 +52,12 @@ without using a library.
 * The output is written in *output* folder. 
 * Also, the *resources* folder contains test and train files.
 
-    ├───src
-    │   ├───main
-    │   │   ├───output
-    │   │   ├───resources
-    │   │   └───scala
-    │   └───test
-    │       └───scala
+        ├───src
+        │   ├───main
+        │   │   ├───output
+        │   │   ├───resources
+        │   │   └───scala
+        │   └───test
+        │       └───scala
 
 Email: dramnani@usc.edu
