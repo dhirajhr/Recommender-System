@@ -14,7 +14,7 @@ without using a library.
 ## Types of Recommender Systems
 ![alt text](https://cdn-images-1.medium.com/max/1600/1*SoQdGU3Xefd0bXbqkkI06w.gif "Types of Recommender Systems")
 ## Collaborative Filtering!
-![alt text](https://cdn-images-1.medium.com/max/1200/1*x8gTiprhLs7zflmEn1UjAQ.png "Collaborative Filtering!")
+![alt text](https://cdn-images-1.medium.com/max/1600/0*o0zVW2O6Rv-LI5Mu.png "Collaborative Filtering!")
 
 # Dataset 
 
