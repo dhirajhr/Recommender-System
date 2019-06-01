@@ -4,6 +4,14 @@
 1. [Approach](README.md#approach)
 
 
+# Overview
+
+1. This project implements a Model-based Collaborating Filtering(CF) recommendation system using Spark MLlib and an Item-based CF system
+without using a library. 
+2. The dataset used is the [Yelp challenge dataset](https://www.yelp.com/dataset/challenge).
+![alt text](https://cdn-images-1.medium.com/max/1600/1*SoQdGU3Xefd0bXbqkkI06w.gif "Types of Recommender Systems")
+
+
 # Dependencies
 
 1. The source code is written in Java 8 and is called Main.java and resides the src folder.
@@ -27,7 +35,9 @@
 
 ## Repo directory structure
 
-The directory structure for your repo should look like this:
+* The *scala* folder under *main* contains *ItemBased.scala* and *ModelBased.scala* files which employ the respective Collaborative Filtering Algorithms to generate recommendations. 
+* The output is written in *output* folder. 
+* Also, the *resources* folder contains test and train files.
 
     ├───src
     │   ├───main
