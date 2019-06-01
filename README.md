@@ -11,7 +11,9 @@
 1. This project implements a Model-based Collaborating Filtering(CF) recommendation system using Spark MLlib and an Item-based CF system
 without using a library. 
 2. The dataset used is the [Yelp challenge dataset](https://www.yelp.com/dataset/challenge).
+## Types of Recommender Systems
 ![alt text](https://cdn-images-1.medium.com/max/1600/1*SoQdGU3Xefd0bXbqkkI06w.gif "Types of Recommender Systems")
+## Collaborative Filtering!
 ![alt text](https://cdn-images-1.medium.com/max/1200/1*x8gTiprhLs7zflmEn1UjAQ.png "Collaborative Filtering!")
 
 # Dataset 
